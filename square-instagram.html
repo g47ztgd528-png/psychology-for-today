@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,500,400&f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --color-bg:#0e0d16; --color-surface:#17151f;
+    --color-text:#e9e7f2; --color-text-muted:#9c98b0;
+    --color-primary:#9a83ff; --color-warning:#e2a93d;
+    --font-display:'Cabinet Grotesk','Georgia',sans-serif;
+    --font-body:'Satoshi','Helvetica Neue',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:1080px;height:1080px;overflow:hidden;}
+  body{
+    font-family:var(--font-body);
+    background:
+      radial-gradient(circle at 15% 10%, #2b2545 0%, transparent 45%),
+      radial-gradient(circle at 88% 90%, #241f3d 0%, transparent 50%),
+      var(--color-bg);
+    color:var(--color-text);
+    display:flex; flex-direction:column; justify-content:space-between;
+    padding:76px 72px 72px;
+  }
+  .brand{display:flex; align-items:center; gap:14px;}
+  .brand svg{color:var(--color-primary);}
+  .brand-name{font-family:var(--font-display); font-weight:700; font-size:30px;}
+  .kicker{
+    font-weight:700; font-size:22px; letter-spacing:0.08em;
+    color:var(--color-primary); text-transform:uppercase; margin-top:44px;
+  }
+  .headline{
+    font-family:var(--font-display); font-weight:700; font-size:72px; line-height:1.06;
+    letter-spacing:-0.015em; margin-top:20px;
+  }
+  .headline .accent{color:var(--color-primary);}
+  .stat-row{ display:flex; gap:24px; margin-top:44px; }
+  .stat-card{
+    flex:1; background:var(--color-surface); border:1.5px solid #322f42; border-radius:24px;
+    padding:28px 30px; display:flex; flex-direction:column; gap:8px;
+  }
+  .stat-label{ font-size:18px; font-weight:600; color:var(--color-text-muted); text-transform:uppercase; letter-spacing:0.04em;}
+  .stat-value{ font-family:var(--font-display); font-size:46px; font-weight:700; letter-spacing:-0.01em;}
+  .stat-value.accent{color:var(--color-primary);}
+  .stat-value.warn{color:var(--color-warning);}
+  .footer{ display:flex; flex-direction:column; gap:16px; }
+  .cta{
+    font-family:var(--font-display); font-size:34px; font-weight:700;
+    background:var(--color-primary); color:#0e0d16; padding:20px 36px; border-radius:18px;
+    letter-spacing:-0.01em; align-self:flex-start;
+  }
+  .url{font-size:22px; color:var(--color-text-muted); font-weight:500;}
+</style>
+</head>
+<body>
+  <div class="brand">
+    <svg width="34" height="34" viewBox="0 0 32 32" fill="none">
+      <circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M11 10.5 L22 16 L11 21.5 Z" fill="currentColor"/>
+      <circle cx="16" cy="16" r="6.4" stroke="currentColor" stroke-width="1.4" fill="none" opacity="0.55"/>
+    </svg>
+    <span class="brand-name">Psychology for Today</span>
+  </div>
+
+  <div>
+    <div class="kicker">Psychology-Niche Shorts</div>
+    <div class="headline">Does <span class="accent">$10,000/mo</span> from Shorts really pencil out?</div>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-label">Views / month</div>
+        <div class="stat-value accent">125.00M</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Eligibility pace</div>
+        <div class="stat-value warn">37.5&times;</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="cta">Run the free simulator →</div>
+    <div class="url">g47ztgd528-png.github.io/shorts-revenue-lab</div>
+  </div>
+</body>
+</html>

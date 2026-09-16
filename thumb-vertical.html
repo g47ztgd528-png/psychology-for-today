@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,500,400&f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --color-bg:#0e0d16; --color-surface:#17151f; --color-surface-2:#1b1926;
+    --color-text:#e9e7f2; --color-text-muted:#9c98b0;
+    --color-primary:#9a83ff; --color-primary-highlight:#2b2545;
+    --color-success:#4fbf97; --color-warning:#e2a93d; --color-error:#e8637a;
+    --font-display:'Cabinet Grotesk','Georgia',sans-serif;
+    --font-body:'Satoshi','Helvetica Neue',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:1080px;height:1920px;overflow:hidden;}
+  body{
+    font-family:var(--font-body);
+    background:
+      radial-gradient(circle at 18% 8%, #2b2545 0%, transparent 45%),
+      radial-gradient(circle at 85% 92%, #241f3d 0%, transparent 50%),
+      var(--color-bg);
+    color:var(--color-text);
+    display:flex; flex-direction:column; justify-content:space-between;
+    padding:88px 72px 96px;
+    position:relative;
+  }
+  .brand{display:flex; align-items:center; gap:16px;}
+  .brand svg{color:var(--color-primary);}
+  .brand-name{font-family:var(--font-display); font-weight:700; font-size:34px; letter-spacing:-0.01em;}
+  .kicker{
+    font-family:var(--font-body); font-weight:700; font-size:26px; letter-spacing:0.08em;
+    color:var(--color-primary); text-transform:uppercase; margin-top:64px;
+  }
+  .headline{
+    font-family:var(--font-display); font-weight:700; font-size:104px; line-height:1.03;
+    letter-spacing:-0.02em; margin-top:28px;
+  }
+  .headline .accent{color:var(--color-primary);}
+  .stat-row{ display:flex; flex-direction:column; gap:28px; margin-top:56px; }
+  .stat-card{
+    background:var(--color-surface); border:1.5px solid #322f42; border-radius:28px;
+    padding:36px 40px; display:flex; flex-direction:column; gap:8px;
+  }
+  .stat-label{ font-size:24px; font-weight:600; color:var(--color-text-muted); text-transform:uppercase; letter-spacing:0.05em;}
+  .stat-value{ font-family:var(--font-display); font-size:64px; font-weight:700; letter-spacing:-0.01em;}
+  .stat-value.accent{color:var(--color-primary);}
+  .stat-value.warn{color:var(--color-warning);}
+  .footer{ display:flex; flex-direction:column; gap:20px; align-items:flex-start;}
+  .cta{
+    font-family:var(--font-display); font-size:44px; font-weight:700;
+    background:var(--color-primary); color:#0e0d16; padding:26px 48px; border-radius:20px;
+    letter-spacing:-0.01em;
+  }
+  .url{font-size:26px; color:var(--color-text-muted); font-weight:500;}
+</style>
+</head>
+<body>
+  <div class="brand">
+    <svg width="40" height="40" viewBox="0 0 32 32" fill="none">
+      <circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M11 10.5 L22 16 L11 21.5 Z" fill="currentColor"/>
+      <circle cx="16" cy="16" r="6.4" stroke="currentColor" stroke-width="1.4" fill="none" opacity="0.55"/>
+    </svg>
+    <span class="brand-name">Psychology for Today</span>
+  </div>
+
+  <div>
+    <div class="kicker">Psychology-Niche Shorts</div>
+    <div class="headline">Does <span class="accent">$10,000/mo</span> from Shorts really pencil out?</div>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-label">Views needed / month</div>
+        <div class="stat-value accent">125.00M</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Eligibility pace vs. YouTube floor</div>
+        <div class="stat-value warn">37.5&times;</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="cta">Run the free simulator →</div>
+    <div class="url">g47ztgd528-png.github.io/shorts-revenue-lab</div>
+  </div>
+</body>
+</html>

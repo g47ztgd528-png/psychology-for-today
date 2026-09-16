@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,500,400&f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --color-bg:#0e0d16; --color-surface:#17151f;
+    --color-text:#e9e7f2; --color-text-muted:#9c98b0;
+    --color-primary:#9a83ff; --color-warning:#e2a93d;
+    --font-display:'Cabinet Grotesk','Georgia',sans-serif;
+    --font-body:'Satoshi','Helvetica Neue',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:1200px;height:630px;overflow:hidden;}
+  body{
+    font-family:var(--font-body);
+    background:
+      radial-gradient(circle at 8% 12%, #2b2545 0%, transparent 42%),
+      radial-gradient(circle at 92% 88%, #241f3d 0%, transparent 46%),
+      var(--color-bg);
+    color:var(--color-text);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:72px 76px;
+  }
+  .left{ max-width:660px; display:flex; flex-direction:column; gap:26px; }
+  .brand{display:flex; align-items:center; gap:14px;}
+  .brand svg{color:var(--color-primary);}
+  .brand-name{font-family:var(--font-display); font-weight:700; font-size:26px;}
+  .headline{
+    font-family:var(--font-display); font-weight:700; font-size:56px; line-height:1.06;
+    letter-spacing:-0.015em;
+  }
+  .headline .accent{color:var(--color-primary);}
+  .sub{font-size:22px; color:var(--color-text-muted); line-height:1.4; max-width:560px;}
+  .url{font-size:22px; font-weight:600; color:var(--color-primary);}
+  .right{ display:flex; flex-direction:column; gap:22px; width:340px; }
+  .stat-card{
+    background:var(--color-surface); border:1.5px solid #322f42; border-radius:22px;
+    padding:26px 28px;
+  }
+  .stat-label{font-size:17px; font-weight:600; color:var(--color-text-muted); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:6px;}
+  .stat-value{font-family:var(--font-display); font-size:42px; font-weight:700;}
+  .stat-value.accent{color:var(--color-primary);}
+  .stat-value.warn{color:var(--color-warning);}
+</style>
+</head>
+<body>
+  <div class="left">
+    <div class="brand">
+      <svg width="30" height="30" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M11 10.5 L22 16 L11 21.5 Z" fill="currentColor"/>
+        <circle cx="16" cy="16" r="6.4" stroke="currentColor" stroke-width="1.4" fill="none" opacity="0.55"/>
+      </svg>
+      <span class="brand-name">Psychology for Today</span>
+    </div>
+    <div class="headline">How many views does <span class="accent">$10,000/month</span> in Shorts revenue really take?</div>
+    <div class="sub">Model your path against real 2026 RPM data, YouTube's 90-day threshold, and anti-template monetization rules.</div>
+    <div class="url">g47ztgd528-png.github.io/shorts-revenue-lab</div>
+  </div>
+  <div class="right">
+    <div class="stat-card">
+      <div class="stat-label">Monthly views needed</div>
+      <div class="stat-value accent">125.00M</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Eligibility pace</div>
+      <div class="stat-value warn">37.5&times; floor</div>
+    </div>
+  </div>
+</body>
+</html>
