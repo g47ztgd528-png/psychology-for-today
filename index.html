@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shorts Revenue Lab — Psychology Niche Monetization Simulator</title>
+<meta name="description" content="Interactive simulator for YouTube Shorts monetization in the psychology niche: revenue-to-views calculator, 90-day rolling threshold risk model, and anti-template compliance planner." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,500,400&f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<a class="skip-link sr-only" href="#calculator">Skip to simulator</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#top" aria-label="Shorts Revenue Lab home">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.6"/>
+        <path d="M11 10.5 L22 16 L11 21.5 Z" fill="currentColor"/>
+        <circle cx="16" cy="16" r="6.4" stroke="currentColor" stroke-width="1.4" fill="none" opacity="0.55"/>
+      </svg>
+      <span class="brand-name">Shorts Revenue Lab</span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="#calculator">Simulator</a>
+      <a href="#risk">Risk Dashboard</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#methodology">Sources</a>
+    </nav>
+    <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode" type="button">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Psychology &amp; self-improvement Shorts &middot; Updated Sep 2026</p>
+      <h1>How many views does <span class="accent">$10,000/month</span> in Shorts revenue really take?</h1>
+      <p class="hero-lede">Model your path to a $10K/month psychology-niche Shorts channel against real 2026 RPM data, YouTube's rolling 90-day view threshold, and the anti-template rules that decide whether a mass-produced daily upload schedule stays monetizable at all.</p>
+      <div class="hero-actions">
+        <a href="#calculator" class="btn btn-primary">Open the simulator</a>
+        <a href="#risk" class="btn btn-ghost">See the risk model</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section id="calculator" class="section">
+    <div class="section-inner">
+      <h2 class="section-title">Revenue &rarr; Views Calculator</h2>
+      <p class="section-lede">Adjust the assumptions below. Everything recalculates live — including how your target compares to YouTube's eligibility pace.</p>
+
+      <div class="calc-grid">
+        <div class="calc-panel card">
+          <div class="field">
+            <div class="field-label-row">
+              <label for="rpm">Psychology-niche Shorts RPM</label>
+              <span class="field-value" id="rpmValue">$0.08</span>
+            </div>
+            <input type="range" id="rpm" min="0.02" max="0.25" step="0.01" value="0.08" />
+            <p class="field-hint">Typical band $0.05&ndash;$0.12 per 1,000 views; range across all niches $0.02&ndash;$0.25. <a href="https://www.usekineo.com/youtube-shorts-rpm-by-niche" target="_blank" rel="noopener">Kineo</a>, <a href="https://miraflow.ai/blog/youtube-shorts-rpm-2026-real-ranges-by-niche" target="_blank" rel="noopener">Miraflow</a></p>
+          </div>
+
+          <div class="field">
+            <div class="field-label-row">
+              <label for="targetRevenue">Target monthly ad revenue</label>
+              <span class="field-value" id="targetRevenueValue">$10,000</span>
+            </div>
+            <input type="range" id="targetRevenue" min="1000" max="50000" step="500" value="10000" />
+            <p class="field-hint">Default is your $10,000/month goal &mdash; drag to test other targets.</p>
+          </div>
+
+          <div class="field">
+            <div class="field-label-row">
+              <label for="videosPerDay">Shorts published per day</label>
+              <span class="field-value" id="videosPerDayValue">10</span>
+            </div>
+            <input type="range" id="videosPerDay" min="1" max="20" step="1" value="10" />
+            <p class="field-hint">Your stated workflow: 10 daily uploads.</p>
+          </div>
+
+          <div class="field">
+            <div class="field-label-row">
+              <label for="convRate">View-to-subscriber conversion</label>
+              <span class="field-value" id="convRateValue">0.8%</span>
+            </div>
+            <input type="range" id="convRate" min="0.2" max="2" step="0.1" value="0.8" />
+            <p class="field-hint">Modeled assumption, not a published stat &mdash; typical range for niche Shorts channels is roughly 0.3%&ndash;1.5% of views converting to new subscribers.</p>
+          </div>
+        </div>
+
+        <div class="calc-results">
+          <div class="kpi-grid">
+            <div class="kpi-card card">
+              <span class="kpi-label">Monthly views needed</span>
+              <span class="kpi-value" id="kpiMonthlyViews">--</span>
+            </div>
+            <div class="kpi-card card">
+              <span class="kpi-label">Daily views needed</span>
+              <span class="kpi-value" id="kpiDailyViews">--</span>
+            </div>
+            <div class="kpi-card card highlight">
+              <span class="kpi-label">Views needed per video</span>
+              <span class="kpi-value" id="kpiViewsPerVideo">--</span>
+            </div>
+            <div class="kpi-card card">
+              <span class="kpi-label">New subscribers / month (modeled)</span>
+              <span class="kpi-value" id="kpiSubsMonth">--</span>
+            </div>
+            <div class="kpi-card card">
+              <span class="kpi-label">Months to clear 1,000-subscriber floor</span>
+              <span class="kpi-value" id="kpiMonthsTo1000">--</span>
+            </div>
+            <div class="kpi-card card">
+              <span class="kpi-label">Daily pace vs. eligibility floor</span>
+              <span class="kpi-value" id="kpiVsFloor">--</span>
+            </div>
+          </div>
+          <p class="reality-check" id="realityCheck"></p>
+        </div>
+      </div>
+
+      <div class="card chart-card">
+        <div class="chart-card-head">
+          <h3>RPM scenario comparison</h3>
+          <p>Daily views required for a $10,000 month across four RPM scenarios.</p>
+        </div>
+        <div class="chart-wrap"><canvas id="scenarioChart" height="260"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RISK DASHBOARD -->
+  <section id="risk" class="section section-alt">
+    <div class="section-inner">
+      <h2 class="section-title">Risk-Assessment Dashboard</h2>
+      <p class="section-lede">YouTube requires a minimum of 1,000 subscribers plus either 4,000 watch hours in 12 months <em>or</em> 10 million qualified Shorts views in the trailing 90 days &mdash; and Shorts ad eligibility must stay above that bar on a rolling basis, or Shorts revenue sharing pauses. From Feb 1, 2027, new applicants face double the bar (8,000 hours / 20M views), and the ongoing Shorts maintenance threshold itself rises to 20M/90 days. <a href="https://www.techtimes.com/articles/323954/20260811/youtube-partner-program-doubles-entry-bar-adds-monthly-shorts-earnings-gate.htm" target="_blank" rel="noopener">Tech Times</a>, <a href="https://www.tubefilter.com/2026/08/10/youtube-partner-program-ad-eligibility-requirements-shorts/" target="_blank" rel="noopener">Tubefilter</a></p>
+
+      <div class="kpi-grid kpi-grid-risk">
+        <div class="kpi-card card">
+          <span class="kpi-label">Current eligibility pace</span>
+          <span class="kpi-value">111,111 views/day</span>
+          <span class="kpi-sub">10M views &divide; 90 days</span>
+        </div>
+        <div class="kpi-card card">
+          <span class="kpi-label">Post-Feb 2027 pace</span>
+          <span class="kpi-value">222,222 views/day</span>
+          <span class="kpi-sub">20M views &divide; 90 days</span>
+        </div>
+        <div class="kpi-card card" id="floorMultipleCard">
+          <span class="kpi-label">Your target's multiple of the floor</span>
+          <span class="kpi-value" id="floorMultiple">--</span>
+          <span class="kpi-sub">at current inputs</span>
+        </div>
+      </div>
+
+      <p class="callout callout-info">
+        <strong>The floor is rarely the binding constraint.</strong> At typical psychology-niche RPM, hitting $10,000/month requires far more daily views than the 10M/90-day eligibility pace &mdash; so clearing the threshold isn't usually the risk. The real risk is <em>sustaining</em> multi-million daily views without a volatility-driven dip, and avoiding a content-policy strike that zeroes monetization regardless of view count.
+      </p>
+
+      <div class="card chart-card">
+        <div class="chart-card-head">
+          <h3>Rolling 90-day threshold simulator</h3>
+          <p>Set an average daily view pace and day-to-day volatility, then simulate 150 days to see how your trailing 90-day sum tracks against both thresholds.</p>
+        </div>
+        <div class="sim-controls">
+          <div class="field field-inline">
+            <div class="field-label-row">
+              <label for="simAvgViews">Average daily views</label>
+              <span class="field-value" id="simAvgViewsValue">130,000</span>
+            </div>
+            <input type="range" id="simAvgViews" min="20000" max="500000" step="5000" value="130000" />
+          </div>
+          <div class="field field-inline">
+            <div class="field-label-row">
+              <label for="simVolatility">Day-to-day volatility</label>
+              <span class="field-value" id="simVolatilityValue">35%</span>
+            </div>
+            <input type="range" id="simVolatility" min="5" max="80" step="5" value="35" />
+          </div>
+          <button class="btn btn-primary" id="runSim" type="button">Re-run simulation</button>
+        </div>
+        <div class="chart-wrap"><canvas id="rollingChart" height="280"></canvas></div>
+        <div class="sim-status" id="simStatus"></div>
+      </div>
+
+      <div class="card">
+        <h3>Compliance-strike exposure</h3>
+        <p>A single confirmed "inauthentic content" finding can suspend monetization on flagged videos or the whole channel &mdash; independent of how many views you have banked. <a href="https://support.google.com/youtube/answer/1311392" target="_blank" rel="noopener">Google</a> At 10 videos/day, a repeating template compounds exposure fast:</p>
+        <div class="risk-table-wrap">
+          <table class="risk-table">
+            <thead>
+              <tr><th>Videos/day</th><th>Videos/week</th><th>Videos in a 90-day window</th><th>Exposure if one template is flagged</th></tr>
+            </thead>
+            <tbody id="riskTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKFLOW -->
+  <section id="workflow" class="section">
+    <div class="section-inner">
+      <h2 class="section-title">10-Video-Daily Workflow, Built for the Anti-Template Rules</h2>
+      <p class="section-lede">Since July 2025, YouTube's "inauthentic content" policy (renamed from "repetitious content") blocks monetization for three categories &mdash; and psychology channels are especially exposed to the third one. <a href="https://www.tubefilter.com/2026/07/13/youtube-inauthentic-content-monetization-policy-update/" target="_blank" rel="noopener">Tubefilter</a></p>
+
+      <div class="policy-grid">
+        <div class="card policy-card">
+          <span class="policy-num">01</span>
+          <h3>Generic or repetitive content</h3>
+          <p>Templated storylines, minimal variation across videos, low educational value, little original commentary, or AI content built on generic templates that reads as mass-produced.</p>
+        </div>
+        <div class="card policy-card">
+          <span class="policy-num">02</span>
+          <h3>Unsatisfying or off-putting content</h3>
+          <p>Emotionally manipulative formulas, formats that make videos feel interchangeable, or content engineered purely to shock &mdash; including stitched, unrelated AI clips with no narrative logic.</p>
+        </div>
+        <div class="card policy-card policy-card-danger">
+          <span class="policy-num">03</span>
+          <h3>AI personas on sensitive topics</h3>
+          <p>An AI presented as a human expert giving health, legal, financial, or political advice is disqualified from monetization outright. A psychology channel using an "AI therapist" persona to dispense advice sits squarely in this category.</p>
+        </div>
+      </div>
+
+      <div class="card callout-card">
+        <h3>Why this matters most for psychology content</h3>
+        <p>Mental health is an explicitly named sensitive-advice category. Any format where an AI-generated host appears to be "a licensed therapist" or "a psychologist" giving direct advice is a monetization risk regardless of view count. Safer structures: a disclosed human host or clearly-labeled AI narrator delivering <strong>commentary and education</strong> (not clinical advice), citing named studies or real cases, with visible disclaimers that the channel is not a licensed provider.</p>
+      </div>
+
+      <h3 class="subsection-title">Weekly pillar rotation (70 uploads/week at 10/day)</h3>
+      <p class="section-lede">Rotate content pillar, format, and proof source together so no two consecutive uploads share the same structure. Click a cell for compliance notes.</p>
+      <div class="rotation-wrap">
+        <table class="rotation-table" id="rotationTable"></table>
+      </div>
+
+      <h3 class="subsection-title">Per-video originality checklist</h3>
+      <p class="section-lede">Score each Short before publishing. Aim for at least 5 of 7 &mdash; fewer than 4 signals template risk.</p>
+      <div class="card checklist-card">
+        <ul class="checklist" id="checklist"></ul>
+        <div class="score-row">
+          <span>Originality score</span>
+          <strong id="scoreValue">0 / 7</strong>
+        </div>
+        <div class="score-bar"><div class="score-bar-fill" id="scoreBarFill"></div></div>
+        <p class="score-verdict" id="scoreVerdict"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY -->
+  <section id="methodology" class="section section-alt">
+    <div class="section-inner">
+      <h2 class="section-title">Methodology &amp; Sources</h2>
+      <ul class="sources-list">
+        <li>Psychology/self-improvement Shorts RPM band ($0.05&ndash;$0.12/1,000 views): <a href="https://www.usekineo.com/youtube-shorts-rpm-by-niche" target="_blank" rel="noopener">Kineo, YouTube Shorts RPM by Niche (2026)</a></li>
+        <li>Broader Shorts RPM range ($0.01&ndash;$0.25) and niche estimates: <a href="https://miraflow.ai/blog/youtube-shorts-rpm-2026-real-ranges-by-niche" target="_blank" rel="noopener">Miraflow, YouTube Shorts RPM in 2026</a>, <a href="https://miraflow.ai/blog/best-niches-youtube-shorts-2026-rpm-estimates" target="_blank" rel="noopener">Miraflow, Best Niches for YouTube Shorts</a></li>
+        <li>Shorts RPM as 3&ndash;14% of long-form RPM, 274-channel study: <a href="https://air.io/en/air-data-findings/youtube-shorts-rpm-vs-long-form-how-much-do-shorts-earn-in-2026" target="_blank" rel="noopener">AIR, Shorts RPM vs long-form</a></li>
+        <li>Current YPP eligibility (1,000 subscribers + 4,000 hrs/12mo or 10M Shorts views/90 days): <a href="https://support.google.com/youtube/answer/72851" target="_blank" rel="noopener">YouTube Help, Partner Program overview</a></li>
+        <li>February 2027 doubled thresholds (8,000 hrs/20M views) and rolling Shorts-ad maintenance rule: <a href="https://www.techtimes.com/articles/323954/20260811/youtube-partner-program-doubles-entry-bar-adds-monthly-shorts-earnings-gate.htm" target="_blank" rel="noopener">Tech Times</a>, <a href="https://www.tubefilter.com/2026/08/10/youtube-partner-program-ad-eligibility-requirements-shorts/" target="_blank" rel="noopener">Tubefilter, Ad Eligibility Requirements</a></li>
+        <li>Inauthentic content policy categories (generic/repetitive, unsatisfying/off-putting, AI personas on sensitive topics): <a href="https://www.tubefilter.com/2026/07/13/youtube-inauthentic-content-monetization-policy-update/" target="_blank" rel="noopener">Tubefilter, Inauthentic Content Monetization Policy Update</a>, <a href="https://support.google.com/youtube/answer/1311392" target="_blank" rel="noopener">YouTube Help, Channel Monetization Policies</a></li>
+        <li>Shorts Feed creator revenue share (45%): <a href="https://support.google.com/youtube/answer/12504220" target="_blank" rel="noopener">YouTube Help, Shorts Monetization Policies</a>, <a href="https://digiday.com/marketing/in-the-platforms-arms-race-for-creators-youtube-shorts-splashes-the-cash/" target="_blank" rel="noopener">Digiday</a></li>
+      </ul>
+      <p class="disclaimer">This is a planning model, not a guarantee. RPM, conversion rates, and view volume vary by audience geography, seasonality, and advertiser demand. YouTube's stated policies and thresholds can change &mdash; always confirm current terms in YouTube's official Partner Program and Community Guidelines documentation before making financial decisions.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="section-inner footer-inner">
+    <p>Shorts Revenue Lab &mdash; a planning tool, not financial advice. Data current as of September 2026.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
